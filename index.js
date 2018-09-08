@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
 	  fs.readFile(filename, function(err, data) {
 	    if (err) {
 	      res.writeHead(404, {'Content-Type': 'text/html'});
-	      if(envTypeColor == null)
+	      if(envTypeColor == null || envTypeColor == 'BLUE' )
 	    	  return res.end("<html><body bgcolor=#ADD8E6><font color=white><h1 >Hello Blue world!</h1></font><p><a href='index.html'>Click Here to start</a></p></body></html>");
 	    	  
 	      else if (envTypeColor == 'GREEN')
