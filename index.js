@@ -6,7 +6,7 @@ var path = require('path');
 var express = require('express');
 var app = express();
 var port = 8080;
-var htmlPath = path.join(__dirname, 'html');
+var htmlPath = path.join(__dirname, 'images');
 
 app.use(express.static(htmlPath));
 
