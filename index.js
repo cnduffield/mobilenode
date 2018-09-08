@@ -7,7 +7,7 @@ var express = require('express');
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var envType = process.env.COLOR;
+var envTypeColor = process.env.COLOR;
 
 var app = express();
 var port = 8080;
@@ -24,10 +24,12 @@ http.createServer(function (req, res) {
 	  fs.readFile(filename, function(err, data) {
 	    if (err) {
 	      res.writeHead(404, {'Content-Type': 'text/html'});
-	      if(COLOR == 'GREEN' && !null)
+	      if(envTypeColor == null)
+	    	  return res.end("<html><body bgcolor=#ADD8E6><font color=white><h1 >Hello Blue world!</h1></font><p><a href='index.html'>Click Here to start</a></p></body></html>");
+	    	  
+	      else if (envTypeColor == 'GREEN')
 	    	  return res.end("<html><body bgcolor=#32CD32><font color=white><h1 >Hello Green world!</h1></font><p><a href='index.html'>Click Here to start</a></p></body></html>");
-	      else
-	    	return res.end("<html><body bgcolor=#ADD8E6><font color=white><h1 >Hello Blue world!</h1></font><p><a href='index.html'>Click Here to start</a></p></body></html>");
+	    	
 	    }  
 	    res.writeHead(200, {'Content-Type': 'text/html'});
 	    res.write(data);
