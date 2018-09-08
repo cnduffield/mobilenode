@@ -24,7 +24,7 @@ http.createServer(function (req, res) {
 	  fs.readFile(filename, function(err, data) {
 	    if (err) {
 	      res.writeHead(404, {'Content-Type': 'text/html'});
-	      return res.end("<html><body bgcolor='#E6E6FA><h1>Hello Blue world!</h1><p><a href='index.html'>Click Here to start</a></p></body></html>");
+	      return res.end("<html><body bgcolor=#ADD8E6><font color="white"><h1 >Hello Blue world!</h1></font><p><a href='index.html'>Click Here to start</a></p></body></html>");
 	  
 	    }  
 	    res.writeHead(200, {'Content-Type': 'text/html'});
