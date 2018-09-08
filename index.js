@@ -15,6 +15,11 @@ var htmlPath = path.join(__dirname, 'images');
 
 app.use(express.static(htmlPath));
 
+app.get('/', function (req, res, next) {
+	 res.sendFile( __dirname + '/index.html');
+	});
+
+
 http.createServer(function (req, res) {
 	  var q = url.parse(req.url, true);
 	  var filename = "." + q.pathname;
@@ -30,10 +35,8 @@ http.createServer(function (req, res) {
 	}).listen(port);
 
 
-app.get('/', function (req, res, next) {
- res.sendFile( __dirname + '/index.html');
-});
 
-app.listen(port, '0.0.0.0', function() {
+/*app.listen(port, '0.0.0.0', function() {
  console.log('Server running at port ' + port);
 });
+*/
