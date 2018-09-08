@@ -13,7 +13,7 @@ var app = express();
 var port = 8080;
 var htmlPath = path.join(__dirname, 'images');
 
-app.use(express.static(htmlPath));
+//app.use(express.static(htmlPath));
 
 
 
@@ -23,8 +23,12 @@ http.createServer(function (req, res) {
 	  var filename = "." + q.pathname;
 	  fs.readFile(filename, function(err, data) {
 	    if (err) {
-	      res.writeHead(404, {'Content-Type': 'text/html'});
-	      return res.end("404 Not Found");
+	      //res.writeHead(404, {'Content-Type': 'text/html'});
+	      //return res.end("404 Not Found");
+	    	res.writeHead(200, {'Content-Type': 'text/html'});
+	    	res.sendFile( __dirname + '/index.html');
+	 	    res.write(data);
+	 	    return res.end();
 	    }  
 	    res.writeHead(200, {'Content-Type': 'text/html'});
 	    res.write(data);
@@ -32,9 +36,9 @@ http.createServer(function (req, res) {
 	  });
 	}).listen(port);
 
-app.get('/', function (req, res, next) {
+/*app.get('/', function (req, res, next) {
 	 res.sendFile( __dirname + '/index.html');
-	});
+	});*/
 
 /*app.listen(port, '0.0.0.0', function() {
  console.log('Server running at port ' + port);
