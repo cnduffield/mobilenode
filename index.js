@@ -7,7 +7,7 @@ var express = require('express');
 var http = require('http');
 var url = require('url');
 var fs = require('fs');
-var envTypeColor = process.env.COLOR;
+var envTypeColor = process.env.COLOR.toUpperCase();
 
 var app = express();
 var port = 8080;
