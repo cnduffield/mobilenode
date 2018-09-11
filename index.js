@@ -23,7 +23,7 @@ http.createServer(function (req, res) {
 	  var filename = "." + q.pathname;
 	  fs.readFile(filename, function(err, data) {
 	    if (err) {
-	      res.writeHead(404, {'Content-Type': 'text/html'});
+	      res.writeHead(200, {'Content-Type': 'text/html'});
 	      if(envTypeColor == null || envTypeColor == 'BLUE'  || envTypeColor == 'blue')
 	    	  return res.end("<html><body bgcolor=#ADD8E6><font color=white><h1 >Hello Blue world!</h1></font><p><a href='index.html'>Click Here to start</a></p></body></html>");
 	    	  
