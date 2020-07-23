@@ -9,5 +9,5 @@ spec:
       containers:
         - image: docker.io/openshift/hello-openshift
           env:
-            - name: RESPONSE
-              value: "Hello Serverless!"
+            - name: color
+              value: "blue"
