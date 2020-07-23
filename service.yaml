@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-        - image: docker.io/openshift/hello-openshift
+        - image: docker.io/cnduffield/lessmobilenode
           env:
             - name: color
               value: "blue"
